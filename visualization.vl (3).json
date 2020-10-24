@@ -13,7 +13,7 @@
       "lookup": "properties.vic_lga__3",
       "from": {
         "data": {
-          "url": "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/MapFinal.csv"
+          "url": "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/MapFinal2.csv"
         },
         "key": "LGA_NAME_R",
         "fields": ["LGA_NAME_R", "Total_Offences"]
