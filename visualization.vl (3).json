@@ -16,7 +16,7 @@
           "url": "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/MapFinal.csv"
         },
         "key": "LGA_NAME_R",
-        "fields": ["LGA_NAME_R", "Offences"]
+        "fields": ["LGA_NAME_R", "Total_Offences"]
       }
     }
   ],
@@ -29,14 +29,14 @@
   },
   "encoding": {
     "color": {
-      "field": "Offences",
+      "field": "Total_Offences",
       "type": "quantitative",
       "scale": {"scheme": "oranges"},
       "legend": {"title": null}
     },
     "tooltip": [
       {"field": "properties.vic_lga__3", "type": "nominal", "title": "Name"},
-      {"field": "Offences", "type": "quantitative", "title": "Offences"}
+      {"field": "Total_Offences", "type": "quantitative", "title": "Total Offences"}
     ]
   },
   "config": {"style": {"cell": {"stroke": "transparent"}}}
