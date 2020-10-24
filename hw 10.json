@@ -1,0 +1,86 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500,
+  "height": 400,
+  "title": "Criminal Incidents & Offences per LGA for Victoria",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/MapFinal2.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Total_Offences",
+      "type": "quantitative",
+      "title": "Total Offences",
+      "axis": {"tickCount": 7}
+    },
+    "y": {
+      "field": "Criminal_Incidents",
+      "title": "Criminal Incidents",
+      "type": "quantitative",
+      "axis": {"tickCount": 6}
+    }
+  },
+  "layer": [
+    {
+      "selection": {
+        "Region_highlight": {
+          "type": "multi",
+          "fields": ["Region"],
+          "bind": "legend"
+        }
+      },
+      "mark": "circle",
+      "encoding": {
+        "color": {
+          "field": "Region",
+          "type": "nominal",
+          "scale": {"domain": ["Metro", "Country"]}
+        },
+        "opacity": {
+          "condition": {"selection": "Region_highlight", "value": 0.6},
+          "value": 0.2
+        },
+        "tooltip": [
+          {"field": "Region", "type": "nominal"},
+          {"field": "LGA_NAME", "type": "nominal"},
+          {"field": "Total_Offences", "type": "quantitative", "format": ","},
+          {"field": "Criminal_Incidents", "type": "quantitative", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "LGA_NAME", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['LGA_NAME'] == 'MELBOURNE' || datum['LGA_NAME'] == 'SHEPPARTON'",
+            "value": 1
+          },
+          "value": 0
+        },
+        "tooltip": [
+          {"field": "Country", "type": "nominal"},
+          {"field": "Confirmed", "type": "quantitative", "format": ","},
+          {"field": "Active", "type": "quantitative", "format": ","},
+          {"field": "Deaths", "type": "quantitative", "format": ","},
+          {"field": "Recovered", "type": "quantitative", "format": ","},
+          {
+            "field": "Cases per 10,000 Population",
+            "type": "quantitative",
+            "format": ".2f"
+          }
+        ]
+      }
+    }
+  ],
+  "config": {}
+}
