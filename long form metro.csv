@@ -1,0 +1,26 @@
+﻿LGA_NAME_R,Type_of_offence,Count
+MELBOURNE,Homicide,11
+MELBOURNE,Assault_Related_Offences,3985
+MELBOURNE,Property_Offences,15547
+MELBOURNE,Drug_Offences,1471
+MELBOURNE,Public_Order_Security,2047
+CASEY,Homicide,8
+CASEY,Assault_Related_Offences,3053
+CASEY,Property_Offences,11123
+CASEY,Drug_Offences,653
+CASEY,Public_Order_Security,1028
+HUME,Homicide,2
+HUME,Assault_Related_Offences,958
+HUME,Property_Offences,3950
+HUME,Drug_Offences,316
+HUME,Public_Order_Security,683
+GREATER DANDENONG,Homicide,5
+GREATER DANDENONG,Assault_Related_Offences,2383
+GREATER DANDENONG,Property_Offences,7686
+GREATER DANDENONG,Drug_Offences,762
+GREATER DANDENONG,Public_Order_Security,1298
+WHITTLESEA,Homicide,5
+WHITTLESEA,Assault_Related_Offences,664
+WHITTLESEA,Property_Offences,5425
+WHITTLESEA,Drug_Offences,291
+WHITTLESEA,Public_Order_Security,437
