@@ -5,7 +5,7 @@
   
   "mark": "rect",
   "width": "container",
-  "padding": {"right": 25},
+  
   "height": 180,
   "encoding": {
     "x": {
