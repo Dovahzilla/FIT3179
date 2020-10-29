@@ -1,0 +1,40 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A bar chart that sorts the y-values by the x-values.",
+  "title": {"text": ["Proportion of Crimes (Metro)"]},
+  "data": {
+    "url": "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/%25_bar_Metro.csv"
+  },
+  "height": {"step": 17},
+  "encoding": {
+    "y": {
+      "field": "Serious_Crime_Metro",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "Types of Serious Crimes"
+    },
+    "x": {
+      "aggregate": "sum",
+      "field": "Proportion",
+      "type": "quantitative",
+      "title": "Percentage of Total Serious Crimes"
+    }
+  },
+  "layer": [
+    {
+      "mark": "bar",
+      "encoding": {
+        "color": {
+          "field": "Serious_Crime_Metro",
+          "type": "nominal",
+          "legend": {"offset": 50}
+        }
+      }
+    },
+    {
+      "mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 3},
+      "encoding": {"text": {"field": "Proportion", "type": "quantitative"}}
+    }
+  ],
+  "config": {}
+}
