@@ -9,7 +9,7 @@
   "encoding": {
     "x": {
       "field": "LGA_NAME_R",
-      "title": "LGA",
+      "title": null,
       "type": "nominal",
       "axis": {"labelAngle":30
     }
