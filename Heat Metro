@@ -4,9 +4,8 @@
   "data": {"url": "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/long%20form%20metro.csv"},
   
   "mark": "rect",
-  "width": "container",
-  
-  "height": 180,
+  "width": 300,
+  "height": 200,
   "encoding": {
     "x": {
       "field": "LGA_NAME_R",
@@ -17,7 +16,7 @@
     },
     "y": {
       "field": "Type_of_offence",
-      "title": "Type of offence",
+      "title": null,
       "type": "nominal"
     },
     "color": {
