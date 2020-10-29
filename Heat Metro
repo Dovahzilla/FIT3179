@@ -4,8 +4,9 @@
   "data": {"url": "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/long%20form%20metro.csv"},
   
   "mark": "rect",
-  "width": 300,
-  "height": 200,
+  "width": "container",
+  "padding": {"right": 25},
+  "height": 180,
   "encoding": {
     "x": {
       "field": "LGA_NAME_R",
