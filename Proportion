@@ -29,6 +29,7 @@
       "encoding": {
         "color": {
           "field": "Serious_Crime_Metro",
+          "title": "serous Crime Metro",
           "type": "nominal",
           "legend": {"offset": 50}
         }
