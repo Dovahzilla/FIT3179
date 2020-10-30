@@ -4,7 +4,7 @@
   "width": 250,
   "padding": {"left": 25},
   "height": 200,
-  "title": {"text": ["Proportion of Crimes (Metro)"]},
+  "title": {"text": ["Proportion of Crimes (Country)"]},
   "data": {
     "url": "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/%25_bar_Country.csv"
   },
