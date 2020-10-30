@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": "Types of Offences for Top 5 LGAs",
+  "data": {"url": "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/long%20form%20country.csv"},
+  
+  "mark": "rect",
+  "width": "300",
+  "height": "200",
+  "encoding": {
+    "x": {
+      "field": "LGA_NAME_R",
+      "title": null,
+      "type": "nominal",
+      "axis": {"labelAngle":30
+    }
+    },
+    "y": {
+      "field": "Type_of_offence",
+      "title": null,
+      "type": "nominal"
+    },
+    "color": {
+      "field": "Count",
+      "type": "quantitative",
+      "scale": {"type":"sqrt",
+      "domain": [5, 10, 100, 1000, 10000, 15000]
+      }
+      
+    },
+"tooltip": [
+      {
+        "field": "Count",
+        
+        "type": "quantitative",
+        "title": "Offences"
+      },
+      {
+        "field": "LGA_NAME_R",
+        "title": "LGA"
+      },
+      {
+        "field": "Type_of_offence",
+        "title": "Type of offence"
+      }
+    ]
+
+  }
+
+
+  
+  
+}
