@@ -29,6 +29,7 @@
       "encoding": {
         "color": {
           "field": "Serious_Crime_Country",
+          "title": "Serious Crimes"
           "type": "nominal",
           "legend": {"offset": 50}
         }
