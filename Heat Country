@@ -6,6 +6,7 @@
   "mark": "rect",
   "width": "300",
   "height": "200",
+  "padding": {"left": 25},
   "encoding": {
     "x": {
       "field": "LGA_NAME_R",
