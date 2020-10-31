@@ -1,0 +1,92 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 300,
+  "height": 300,
+  "padding": {"right": 100},
+  "title": "Criminal Incident Count & Rate per LGA for Victoria",
+  "data": {
+    "url": "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/per_capita_population2.csv"
+  },
+  "encoding": {
+    "x": {
+      "field": "Criminal_Incidents",
+      "type": "quantitative",
+      "title": "Count of Criminal Incidents",
+      "axis": {"tickCount": 7}
+      
+    },
+    "y": {
+      "field": "Crimes Per Capita",
+      "title": "Crime Rates Per Capita",
+      "type": "quantitative",
+      "axis": {"tickCount": 6}
+    }
+  },
+  "layer":[{
+"selection": {
+    "Region_highlight": {
+      "type": "multi",
+      "fields": ["Region"],
+      "bind": "legend"
+    }
+  },
+  "mark": "circle",
+  "encoding": {
+    "color": {
+      "field": "Region",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Metro",
+          "Country"
+        ]
+      }
+    },
+    "opacity": {
+      "condition": {"selection": "Region_highlight", "value": 0.6},
+      "value": 0.2
+    },
+
+    "size": {
+      "field": "Population",
+      "type": "quantitative",
+      "scale": {
+        "type": "threshold",
+        "domain": [30000, 100000, 200000],
+        "range": [10, 50, 150, 200, 300, 400]
+      }
+      
+    },
+
+    "tooltip": [
+      {"field": "Region", "type": "nominal"},
+      {"field": "LGA_NAME_R", "type": "nominal"},
+      {"field": "Total_Offences", "type": "quantitative", "format": ","},
+      {"field": "Criminal_Incidents", "type": "quantitative", "format": ","}
+      
+    ]
+  }
+  },
+  {
+ "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "middle",
+        "dx": -12,
+        "fontSize": 11.5,
+        "fontStyle": "italic"
+      },
+      "encoding": {
+        "text": {"field": "LGA_NAME", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity": {
+          "condition": {
+            "test": "datum['LGA_NAME'] == 'MELBOURNE' || datum['LGA_NAME'] == 'SHEPPARTON'",
+            "value": 1
+          },
+          "value": 0
+        }
+      }
+  }
+  ]
+}
