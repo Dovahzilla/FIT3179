@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Assignment 2 - Leon Liu</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Styles -->
+  
+  
+  <style>
+    *{
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    *{
+      font-family: 'verdana';
+    }
+    p{
+      font-size: 14px;
+     }
+     body{
+       background-color: #B1F2FF;
+     }
+     .page{
+       width: 1200px;    
+       background-color: white;   
+       margin: auto;
+       padding: 25px;
+       padding-top: 25px;
+    }
+    .vis-container{
+      width: 100%;
+    }
+    .description-right{
+      padding-left: 25px;
+    }
+    .description-left{
+      padding-right: 25px;
+    }
+    .pure-g{
+      margin-bottom: 25px;
+    }
+    .small-font{
+        font-size: 7px;      
+    }
+    .redText{ 
+    color: red;
+    font-weight:bold;
+    } 
+    h5, .h5{
+      margin-bottom: 10px;
+    }
+    
+
+  </style>
+  
+</head>
+
+<!-- All the code for the visualisatiion formatting -->
+<body>
+  
+  <div class="page">
+    
+    <!-- Title -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1 style="text-align:center;">Criminal Offences in Victoria</h1>
+        <p style="text-align:center;font-size:25px;">Comparison Between Metropolitan and Country</p>
+      </div>      
+    </div>
+    <!-- End Title -->
+                                                     
+    <!-- First section -->
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description-left">
+            <h2>Population and Crime</h2>
+            <p>Logical thinking tells us that the larger a population is, the more crime we would find in the area.  Therefore, first off, we compare<span style="color: #ec3024;"><strong> Crime Rate per Capita against the count of criminal incidents.</strong></span>   We can see that most LGAs have a similar amount of crime rate per capita.  There is a large cluster between 0.00 and 0.04.  Here we can also see the outliers such as <span style="color: #ec3024;"><strong>Melbourne</strong></span>  for having an incredibly high count of criminal incident rate, and  <span style="color: #ec3024;"><strong>Greater Shepparton</strong> </span>motor accidents <span style="color: #ec3024;"><strong> for having a very high crime rate per capita.</strong></span> had a total of <span style="color: #ec3024;"><strong>21,651</strong> </span>motor accidents.</p>
+            <p>A <span style="color: #ec3024;"><strong>tooltip </strong> </span>is included for extra information.</p>
+            <p>Althought it may seem to make more sense to go with a per capita analysis instead of just counting offences, using the results for individual LGAs do not serve us well.  Since the data takes public misdemenour into account, LGAs that have a small population with very rare occurances of assault and drug use are represented as more dangeous than they actually are.</p>
+          </div>
+        </div>
+        
+        <div class="pure-u-1-2">
+          <div class="pure-u-1-1">
+
+            <div>
+              <h5 style="text-align:center;">Correlation between Population and Crime Rate?</h5>
+            </div>
+
+            <div id="LineGraph" class="vis-container"></div>
+          </div>
+        </div>
+
+       
+    <!-- First section -->  
+    
+    <!-- Map  -->
+    <div class="pure-g" style="border-top: 1px solid red;">
+      <div class="pure-u-2-3">
+
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <h2>Offences Across Victoria</h2>
+          </div>      
+        </div> 
+
+        <div class="pure-g">
+          <div class="pure-u-1-1">
+            <div id="MapBinned" class="vis-container"></div>
+          </div>
+        </div>  
+        
+      </div>
+
+      
+      <div class="pure-u-1-3">
+        <div class="description-right">
+          <br>
+          <br>
+          <p>On average, <span style="color: #ec3024;"><strong>metropolitan Victoria had an average of 0.0277</strong> </span> Crime rate per capita. <span style="color: #ec3024;"><strong> Country Victoria was larger at an average of 0.0267 </strong></span> Crime rate per capita. Hence, when calculating per capita for the whole Region, country Victoria has a similar crime rate to metropolitan Victoria.</p>
+          <p>&nbsp;</p>
+          <p style="text-align: center;"><strong>Top 5 Metro LGA's With the Most Offences:</strong></p>
+          <p style="text-align: center;">Melbourne</p>
+          <p style="text-align: center;">Casey</p>
+          <p style="text-align: center;">Greater Dandenong</p>
+          <p style="text-align: center;">Whittlesea</p>
+          <p style="text-align: center;">Hume</p>
+          <p style="text-align: center;">&nbsp;</p>
+          <p style="text-align: center;"><strong>Top 5 Country LGA's With the Most Offences:</strong></p>
+          <p style="text-align: center;">Greater Shepparton</p>
+          <p style="text-align: center;">Latrobe</p>
+          <p style="text-align: center;">Greater Bendigo</p>
+          <p style="text-align: center;">Ballarat</p>
+          <p style="text-align: center;">Greater Geelong</p>
+      </div>      
+    </div>
+    </div>
+    <!-- End Map -->    
+    
+    
+    <div class="pure-g" style="border-top: 1px solid red; border-bottom: 1px solid red;">
+         <!-- Left Side -->         
+        <div class="pure-u-1-2">
+
+            <div class="pure-g" style="margin-bottom: 5px;">
+              <div class="pure-u-1-1">
+
+                <div style="padding-right: 25px;">
+                  <h2 style="text-align:center;">Metropolitan</h2>
+                </div> 
+
+                  <div style="padding-right: 25px;" style="margin-bottom: 15px;">
+                    <h5 style="text-align:center;">Serious Criminal Incidents for Top 5 LGAs</h5>
+                  </div>
+
+                  <div id="HeatMap" class="vis-container"></div>
+              </div> 
+            </div>  
+
+            <div class="pure-g" style="margin-bottom: 15px;">
+                <div class="pure-u-1-1">
+                    <div class="description-left">
+                      <p>As we can see, <span style="color: #ec3024;"><strong>Casey </strong></span>seems to have a high amount of property offences proportionally. It also proportionally has a higher homicide rate compared to other dangeous LGAs.  However, although <span style="color: #ec3024;"><strong>Casey </strong> </span>has a higher amounts of assault and homice rates than <span style="color: #ec3024;"><strong>Greater Dandenong</strong></span> it has lower drug offences and public order security offences.  This allows readers to use the <span style="color: #ec3024;"><strong> Heatmaps </strong></span>to pick and choose which LGA to reside in based off the particular offence they really want to avoid.</p>                    
+                    </div>
+                </div> 
+            </div>    
+   
+            <div class="pure-g" style="margin-bottom: 5px;">
+                <div class="pure-u-1-1">
+
+                  <div style="padding-right: 25px;">
+                    <h5 style="text-align:center;">Proportion of Serious Crimes</h5>
+                  </div>
+
+                  <div id="BarChart" class="vis-container"></div>
+                </div>
+            </div>        
+
+            <div class="pure-g" style="margin-bottom: 15px;">
+              <div class="pure-u-1-1">
+                  <div class="description-left">
+                    <p>By far the most common serious crimes are <span style="color: #ec3024;"><strong> Property offences, followed by Assault related offences.</strong></span> The remaining three offences make up for less than 15% of all offences. If the reader did not care about property or assault offences but is extremely wary of drug offences because they do not want their child taking up drugs, then they would choose country over metro regions as the former has a much lower proportion of drug offences.</p>                 
+                  </div>
+              </div> 
+            </div> 
+
+          
+           
+        </div>  
+         <!-- End Left Side --> 
+
+        <!-- Right Side -->
+        <div class="pure-u-1-2" style="border-left: 0.5px solid red;">
+
+            <div class="pure-g" style="margin-bottom: 5px;">
+              <div class="pure-u-1-1">
+
+                <div style="padding-left: 25px;">
+                  <h2 style="text-align:center;">Country</h2>
+                </div> 
+
+                  <div style="padding-left: 25px;" style="margin-bottom: 15px;">
+                    <h5 style="text-align:center;">Serious Criminal Incidents for Top 5 LGAs</h5>
+                  </div>
+
+                  <div id="HeatMapCountry" class="vis-container"></div>
+              </div> 
+            </div> 
+
+            <div class="pure-g" style="margin-bottom: 15px;">
+                <div class="pure-u-1-1">
+                    <div class="description-right">
+                      <p>As we can see, offences are spread much more evenly for the <strong><span style="color: #ec3024;">Country Regions. </span> </strong>The only LGA which stands out in particular is <span style="color: #ec3024;"><strong>Greater Geelong.</strong></span> This makes sense, because although <span style="color: #ec3024;"><strong>Greater Geelong </strong></span>&nbsp;is classified as a Country Region, it has a high population and an environment akin to a semi-densely populated suburb or city. We can also see that Latrobe and Greater Shepparton has less homicides than the rest, given a similar count for other offences.</p>                    
+                    </div>
+                </div> 
+            </div>    
+   
+            <div class="pure-g" style="margin-bottom: 5px;">
+                <div class="pure-u-1-1">
+
+                  <div style="padding-left: 25px;">
+                    <h5 style="text-align:center;">Proportion of Serious Crimes</h5>
+                  </div>                  
+
+                  <div id="BarChartCountry" class="vis-container"></div>
+                </div>
+            </div>  
+
+            <div class="pure-g" style="margin-bottom: 15px;">
+              <div class="pure-u-1-1">
+                <div class="description-right">
+                  <p> Once again, by far the most common serious crimes are <strong><span style="color: #ec3024;">Property offences, followed by Assault related offences. </span></strong></strong></span> An interesting point is, Country regions have proportionally more homicides than Metro regions, whilst having almost half the drug and public order security offences.  This is most likely because dense populated areas invite more opportunities for public disorderly behaviors and drug offences</p>                
+                </div>
+              </div> 
+            </div> 
+    
+    
+  </div> <!-- end page -->
+ 
+    <!-- First section -->
+    <div class="pure-g" style="border-top: 1px solid red;">
+        <div class="pure-u-1-2">
+          <div class="description-left">
+            <h2>Harm Caused</h2>
+            <p>The Harm caused by crime measure reorganises the person based victim reports by principal offence type into an alternate view that is categorised by a high, medium of low harm classification. Not all offence types included in the CSA offence classification are included in the Harm caused by crime measure. The harm caused measure is designed to allow the user to explore offence types and the different harm classifications at the state and local government area levels.</p>
+            <p>To see more information about an LGA just hover your mouse pointer over the dot. In this visualisation each LGA is represented by three dots, the red represents high harm caused, orange represents medium harm and low harm is represented by green. Dots located in the top half of the visualisation have recorded a higher volume while dots located further to the right of the visualisation represent a higher proportion of that category in that LGA. </p>
+            
+          </div>
+        </div>
+        
+        <div class="pure-u-1-2">
+          <div class="pure-u-1-1">
+
+            <div>
+              <h5 style="text-align:center;">Correlation between Population and Crime Rate?</h5>
+            </div>
+
+            <div id="dotgraph" class="vis-container"></div>
+          </div>
+        </div>
+ 
+ 
+                                                          
+<script type="text/javascript">
+  var specLineGraph = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/Better%20bubble";
+  var specdotgraph = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/harm";
+  var specMapBinned = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/visualization.vl%20(3).json";
+  var specHeatMap = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/Heat%20Metro";
+  var specHeatMapCountry = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/Heat%20Country";
+  var specBarChart = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/Proportion";
+  var specBarChartCountry = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/Proportion%20Country";
+ 
+  
+
+  vegaEmbed('#LineGraph', specLineGraph, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+   vegaEmbed('#dotgraph', specdotgraph, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+   vegaEmbed('#MapBinned', specMapBinned, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);  
+  
+  vegaEmbed('#HeatMap', specHeatMap, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);  
+  
+  vegaEmbed('#HeatMapCountry', specHeatMapCountry, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);    
+  
+  vegaEmbed('#BarChart', specBarChart, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);  
+  
+  vegaEmbed('#BarChartCountry', specBarChartCountry, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);      
+  
+  vegaEmbed('#AreaChart', specAreaChart, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);     
+  
+  vegaEmbed('#AreaChartCountry', specAreaChartCountry, {"actions": false}).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);       
+  
+</script>
+                                         
+</body>
+<html>
