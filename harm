@@ -1,0 +1,16 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "A scatterplot showing horsepower and miles per gallons that opens a Google search for the car that you click on.",
+  "data": {"url": "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/harm.csv"},
+  "mark": "point",
+  
+  "encoding": {
+    "x": {"field": "Harm Proportion (AGG)", "type": "quantitative"},
+    "y": {"field": "Victim Reports (SUM)", "type": "quantitative"},
+    "color": {"field": "Harm Caused Flag", "type": "nominal"},
+    "tooltip": [{"field": "Local Government Area", "type": "nominal"},
+    {"field": "Harm Proportion (AGG)", "type": "quantitative"},
+    {"field": "Victim Reports (SUM)", "type": "quantitative"}
+    ]
+  }
+}
