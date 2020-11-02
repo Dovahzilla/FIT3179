@@ -7,8 +7,8 @@
   "mark": "point",
   
   "encoding": {
-    "x": {"field": "Harm Proportion (AGG)", "type": "quantitative", "title": "Victim Reports"},
-    "y": {"field": "Victim Reports (SUM)", "type": "quantitative", "title": "Harm Proportion"},
+    "x": {"field": "Harm Proportion (AGG)", "type": "quantitative", "title": "Harm Proportion"},
+    "y": {"field": "Victim Reports (SUM)", "type": "quantitative", "title": "Victim Reports"},
     "color": {"field": "Harm Caused Flag", "type": "nominal"},
     "tooltip": [{"field": "Local Government Area", "type": "nominal"},
     {"field": "Harm Proportion (AGG)", "type": "quantitative"},
