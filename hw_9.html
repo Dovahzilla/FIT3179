@@ -264,7 +264,7 @@
               <h5 style="text-align:center;">Correlation between Population and Crime Rate?</h5>
             </div>
 
-            <div id="LineGraphCountry" class="vis-container"></div>
+            <div id="dotgraph" class="vis-container"></div>
           </div>
         </div>
  
@@ -272,7 +272,7 @@
                                                           
 <script type="text/javascript">
   var specLineGraph = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/Better%20bubble";
-  var specLineGraphCountry = "https://SayujMonash.github.io/FIT3179/LineGraphCountry.json";
+  var specdotgraph = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/harm";
   var specMapBinned = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/visualization.vl%20(3).json";
   var specHeatMap = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/Heat%20Metro";
   var specHeatMapCountry = "https://raw.githubusercontent.com/Dovahzilla/FIT3179/main/Heat%20Country";
@@ -286,7 +286,7 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-   vegaEmbed('#LineGraphCountry', specLineGraphCountry, {"actions": false}).then(function(result) {
+   vegaEmbed('#dotgraph', specdotgraph, {"actions": false}).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
